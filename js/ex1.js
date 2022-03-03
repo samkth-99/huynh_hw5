@@ -1,15 +1,17 @@
 class Square {
   constructor(side) {
     this.side = side;
-    
 }
-  description() {
-    return `${this.perimeter},  ${this.area}`; 
+  area() {
+    return this.side * this.side
+    }
+  perimeter() {
+      return this.side * 4
+      }
+  diagonal() {
+      return Math.sqrt(2) * this.side 
+      }
   }
-}
 
-const squareSide = new Square(2); 
-this.perimeter = side *4;
-this.area = side * side;
-console.log(description());
-console.log(`Square with side ${this.side} has perimeter of ${this.perimeter}, area of ${this.area}, and diagonal of 2.828 `)
+const theSquare = new Square(2); 
+console.log(`Square with side ${theSquare.side} has perimeter of ${theSquare.perimeter()}, area of ${theSquare.area()}, and diagonal of ${theSquare.diagonal()}`); 

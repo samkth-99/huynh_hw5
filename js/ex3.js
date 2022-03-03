@@ -33,10 +33,15 @@ const studentList = [
 ];
 // TO DO - Write higher order functions / There are many solutions
 //Declare cLastNameResults.  Use functions and map a new array of objects
-const cLastNameResults = studentList.map(student => {
+const cLastNameResults = studentList.filter(list => list.lastName.startsWith("C"))
+.map(list => {
     return { 
-        averageScore: student.scores.reduce((sum, score) => sum + score, 0) / student.scores.length,  // Pass the student grades to the arrayAvg function we created
-        firstName: student.firstName
+        FirstName: list.firstName, 
+        LastName: list.lastName, 
+        minScore: Math.min.apply(null, list.scores), 
+        maxScore: Math.max.apply(null, list.scores),
+        avgScore: list.scores.reduce((sum, score) => sum + score, 0) / list.scores.length,  
+        
     }
   });
   
